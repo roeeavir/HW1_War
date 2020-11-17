@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 deck.add(new WarCard(drawableResourceId, i));
             }
         }
-        leftScore++;
+        leftScore++; // Sets leftScore to 0
         Collections.shuffle(deck);// Shuffles deck randomly
     }
 
