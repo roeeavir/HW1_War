@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void play() {
         String[] turn_info = game.playTurn();// Needed turn info - cards id & round winner
+        String str;
 
         int left_Drawable_ID = this.getResources().getIdentifier(turn_info[0],
                 "drawable", this.getPackageName());// Gets card id from card object
@@ -55,16 +56,17 @@ public class MainActivity extends AppCompatActivity {
         card_IMG_left.setImageResource(left_Drawable_ID); // Sets images
         card_IMG_right.setImageResource(right_Drawable_ID);
 
-        if (turn_info[2].equals("Right Player")) {// Checks and updates round winner
+        if (turn_info[2].equals("Right")) {// Checks and updates round winner
             score_LBL_right.setText("" + game.getRightScore());
             turn_info[2] += " +1";
-        } else if (turn_info[2].equals("Left Player")) {
+        } else if (turn_info[2].equals("Left")) {
             score_LBL_left.setText("" + game.getLeftScore());
             turn_info[2] += " +1";
         }
 
         // Number of turns remaining and round winner
-        turns_LBL_center.setText("Turns left: " + game.getDeck().size() / 2 + "\n" + turn_info[2]);
+        str = "Turns left:\t\t" + game.getDeck().size() / 2 + "\n" + turn_info[2];
+        turns_LBL_center.setText(str);
 
         if (game.getDeck().isEmpty())// Updates ImageView to finish line
             play_BTN_center.setImageResource(this.getResources().getIdentifier(

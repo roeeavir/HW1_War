@@ -9,13 +9,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ResultsActivity extends AppCompatActivity {
 
+    private final int DELAY = 500;
     public static final String RESULT_WINNER = "RESULT WINNER";
 
     private TextView results_LBL_winner;
-    private Button results_BTN_exit, results_BTN_color;
+    private Button results_BTN_exit;
 
     Random r;
 
@@ -39,21 +42,51 @@ public class ResultsActivity extends AppCompatActivity {
                 finish();
             } // Exits activity
         });
-        results_BTN_color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { // Random colors for winner label
-                int color = Color.argb(255, r.nextInt(256),
-                        r.nextInt(256), r.nextInt(256));
-                results_LBL_winner.setTextColor(color);
-            }
-        });
-
     }
 
     private void findViews() {
         results_LBL_winner = findViewById(R.id.results_LBL_winner);
         results_BTN_exit = findViewById(R.id.results_BTN_exit);
-        results_BTN_color = findViewById(R.id.results_BTN_color);
         r = new Random();
+    }
+
+    private void changeColor(){
+        int color = Color.argb(255, r.nextInt(256),
+                r.nextInt(256), r.nextInt(256));
+        results_LBL_winner.setTextColor(color);
+        results_BTN_exit.setBackgroundColor(color);
+    }
+
+    private Timer carousalTimer;
+
+    private void startCounting() {
+        carousalTimer = new Timer();
+        carousalTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        changeColor();
+                    }
+                });
+            }
+        }, 0, DELAY);
+    }
+
+    private void stopCounting() {
+        carousalTimer.cancel();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        startCounting();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopCounting();
     }
 }

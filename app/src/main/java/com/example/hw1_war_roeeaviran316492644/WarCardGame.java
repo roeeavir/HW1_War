@@ -49,10 +49,10 @@ public class WarCardGame {// Card deck class
 
         if (left_Drawable_Value < right_Drawable_Value) {// Checks and updates round winner
             rightScore++;
-            turn_info[2] = "Right Player";
+            turn_info[2] = "Right";
         } else if (left_Drawable_Value > right_Drawable_Value) {
             leftScore++;
-            turn_info[2] = "Left Player";
+            turn_info[2] = "Left";
         } else
             turn_info[2] = "Draw";
 
