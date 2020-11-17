@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class ResultsActivity extends AppCompatActivity {
 
-    public static final String RESULT_WINNER = "RESULT_WINNER";
+    public static final String RESULT_WINNER = "RESULT WINNER";
 
     private TextView results_LBL_winner;
     private Button results_BTN_exit, results_BTN_color;
@@ -27,7 +27,7 @@ public class ResultsActivity extends AppCompatActivity {
         findViews();
 
         String winner = getIntent().getStringExtra(RESULT_WINNER);
-        results_LBL_winner.setText(winner+ " Wins!!!");
+        results_LBL_winner.setText(winner + " Wins!!!");// Sets winner label
 
         initViews();
     }
@@ -37,11 +37,11 @@ public class ResultsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-            }
+            } // Exits activity
         });
         results_BTN_color.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // Random colors for winner label
                 int color = Color.argb(255, r.nextInt(256),
                         r.nextInt(256), r.nextInt(256));
                 results_LBL_winner.setTextColor(color);

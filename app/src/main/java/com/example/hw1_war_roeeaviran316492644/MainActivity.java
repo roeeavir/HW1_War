@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<WarCard> deck;
 
-    private int leftScore = -1, rightScore = 0;
+    private int leftScore = -1; //Marks start of game
+    private int rightScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,76 +47,75 @@ public class MainActivity extends AppCompatActivity {
         play_BTN_center.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (leftScore == -1)
+                if (leftScore == -1)// before the first round - we shuffle the deck
                     shuffleDeck();
-                if (deck.isEmpty())
+                if (deck.isEmpty())// If the deck is empty - game is over and we announce the winner
                     winner();
                 else
-                    playWar();
+                    playWar();// Play game round
             }
         });
     }
 
-    private void shuffleDeck() {
-        deck = new ArrayList<WarCard>();
-        String str = "";
+    private void shuffleDeck() {// Function for initializing and shuffling deck
+        deck = new ArrayList<>();
+        String str;
         int drawableResourceId;
-        for (char c : CARD_TYPES) {
+        for (char c : CARD_TYPES) {// inserts 52 cards into the deck
             for (int i = MIN_CARD_SCORE; i < MAX_DIFFERENT_CARD_SCORES + MIN_CARD_SCORE; i++) {
                 str = "poker_" + c + i;
                 drawableResourceId = this.getResources().getIdentifier(str, "drawable",
-                        this.getPackageName());
+                        this.getPackageName());// Gets ImageView id from ImageView name
                 deck.add(new WarCard(drawableResourceId, i));
             }
         }
         leftScore++;
-        Collections.shuffle(deck);
+        Collections.shuffle(deck);// Shuffles deck randomly
     }
 
     private void playWar() {
-        WarCard left_Card = deck.remove(0);
+        WarCard left_Card = deck.remove(0);// Gets card object from deck
         WarCard right_Card = deck.remove(0);
-        int left_Drawable_ID = left_Card.getCard_ID();
+        int left_Drawable_ID = left_Card.getCard_ID();// Gets card id from card object
         int right_Drawable_ID = right_Card.getCard_ID();
 
-        int left_Drawable_Value = left_Card.getCard_Value();
+        int left_Drawable_Value = left_Card.getCard_Value();// Gets card value from card object
         int right_Drawable_Value = right_Card.getCard_Value();
 
-        card_IMG_left.setImageResource(left_Drawable_ID);
+        card_IMG_left.setImageResource(left_Drawable_ID); // Sets images
         card_IMG_right.setImageResource(right_Drawable_ID);
 
-        turns_LBL_center.setText("Turns left: " + deck.size() / 2);
+        turns_LBL_center.setText("Turns left: " + deck.size() / 2);// Number of turns remaining
 
-        if (left_Drawable_Value < right_Drawable_Value) {
+        if (left_Drawable_Value < right_Drawable_Value) {// Checks and updates round winner
             rightScore++;
             score_LBL_right.setText("" + rightScore);
-            turns_LBL_center.setText(turns_LBL_center.getText()+"\nRight Player +1");
+            turns_LBL_center.setText(turns_LBL_center.getText() + "\nRight Player +1");
         } else if (left_Drawable_Value > right_Drawable_Value) {
             leftScore++;
             score_LBL_left.setText("" + leftScore);
-            turns_LBL_center.setText(turns_LBL_center.getText()+"\nLeft Player +1");
-        }
-        else
-            turns_LBL_center.setText(turns_LBL_center.getText()+"\nDraw");
-        if (deck.isEmpty())
-            play_BTN_center.setImageResource( this.getResources().getIdentifier(
+            turns_LBL_center.setText(turns_LBL_center.getText() + "\nLeft Player +1");
+        } else
+            turns_LBL_center.setText(turns_LBL_center.getText() + "\nDraw");
+        if (deck.isEmpty())// Updates ImageView to finish line
+            play_BTN_center.setImageResource(this.getResources().getIdentifier(
                     "finish_line", "drawable", this.getPackageName()));
 
     }
 
     private void winner() {
         Intent myIntent = new Intent(MainActivity.this, ResultsActivity.class);
-        if (leftScore > rightScore)
+        if (leftScore > rightScore)// Checks winner
             myIntent.putExtra(ResultsActivity.RESULT_WINNER, "Left Player");
         else if (leftScore < rightScore)
             myIntent.putExtra(ResultsActivity.RESULT_WINNER, "Right Player");
         else
             myIntent.putExtra(ResultsActivity.RESULT_WINNER, "Corona");
-        startActivity(myIntent);
-        finish();
+        startActivity(myIntent);// Opens winner activity
+        finish();// Exits this activity (exits app)
     }
 
-    private void findViews() {
+    private void findViews() {// Initializes views
         score_LBL_left = findViewById(R.id.score_LBL_left);
         score_LBL_right = findViewById(R.id.score_LBL_right);
         card_IMG_left = findViewById(R.id.card_IMG_left);
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         turns_LBL_center = findViewById(R.id.turns_LBL_center);
     }
 
-
+    // Log functions
     @Override
     protected void onPause() {
         Log.d("pttt", "Pause");
