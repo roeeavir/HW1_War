@@ -72,6 +72,8 @@ public class WarCardGame {// Card deck class
             return "Corona";
     }
 
+    public int getFullDeckSize(){return CARD_TYPES.length*MAX_DIFFERENT_CARD_SCORES;}
+
     public ArrayList<WarCard> getDeck() {
         return deck;
     }

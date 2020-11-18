@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -17,6 +18,7 @@ public class ResultsActivity extends AppCompatActivity {
     private final int DELAY = 500;
     public static final String RESULT_WINNER = "RESULT WINNER";
 
+    RelativeLayout results_REL_background;
     private TextView results_LBL_winner;
     private Button results_BTN_exit;
 
@@ -27,10 +29,13 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
+
         findViews();
 
         String winner = getIntent().getStringExtra(RESULT_WINNER);
         results_LBL_winner.setText(winner + " Wins!!!");// Sets winner label
+        results_REL_background.setBackgroundResource(R.drawable.background_peace);
+
 
         initViews();
     }
@@ -47,6 +52,7 @@ public class ResultsActivity extends AppCompatActivity {
     private void findViews() {
         results_LBL_winner = findViewById(R.id.results_LBL_winner);
         results_BTN_exit = findViewById(R.id.results_BTN_exit);
+        results_REL_background = findViewById(R.id.results_REL_background);
         r = new Random();
     }
 

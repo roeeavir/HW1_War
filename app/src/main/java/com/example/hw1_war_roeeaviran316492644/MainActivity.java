@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void play() {
+        if(game.getDeck().size() == game.getFullDeckSize())
+            play_BTN_center.setImageResource(this.getResources().getIdentifier(
+                    "play_button", "drawable", this.getPackageName()));
+
         String[] turn_info = game.playTurn();// Needed turn info - cards id & round winner
         String str;
 
