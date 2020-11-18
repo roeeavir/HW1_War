@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void winner() {
+        play_BTN_center.setEnabled(false);// Prevents results activity to open more than once
         String str = game.getWinner();// Gets winner's name
         Intent myIntent = new Intent(MainActivity.this, ResultsActivity.class);
         myIntent.putExtra(ResultsActivity.RESULT_WINNER, str);
