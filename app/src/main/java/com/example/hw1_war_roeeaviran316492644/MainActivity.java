@@ -34,21 +34,25 @@ public class MainActivity extends AppCompatActivity {
         play_BTN_center.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // If the deck is empty - game is over and we announce the winner
-                if (game.getDeck().isEmpty())
-                    winner();
-                else
-                    play();// Play game round
+                turn();
             }
         });
     }
 
-
-    private void play() {
+    private void turn(){
+        // Changes ImageButton image to play_button
         if(game.getDeck().size() == game.getFullDeckSize())
             play_BTN_center.setImageResource(this.getResources().getIdentifier(
                     "play_button", "drawable", this.getPackageName()));
+        // If the deck is empty - game is over and we announce the winner
+        if (game.getDeck().isEmpty())
+            winner();
+        else
+            play();// Play game round
+    }
 
+
+    private void play() {
         String[] turn_info = game.playTurn();// Needed turn info - cards id & round winner
         String str;
 
