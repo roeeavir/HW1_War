@@ -1,7 +1,5 @@
 package com.example.hw1_war_roeeaviran316492644;
 
-import android.app.Activity;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -73,7 +71,9 @@ public class WarCardGame {// Card deck class
             return "Corona";
     }
 
-    public int getFullDeckSize(){return CARD_TYPES.length*MAX_DIFFERENT_CARD_SCORES;}
+    public int getFullDeckSize() {
+        return CARD_TYPES.length * MAX_DIFFERENT_CARD_SCORES;
+    }
 
     public ArrayList<WarCard> getDeck() {
         return deck;

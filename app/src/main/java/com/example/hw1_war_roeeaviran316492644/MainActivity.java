@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void turn(){
+    private void turn() {
         // Changes ImageButton image to play_button
-        if(game.getDeck().size() == game.getFullDeckSize())
+        if (game.getDeck().size() == game.getFullDeckSize())
             play_BTN_center.setImageResource(this.getResources().getIdentifier(
                     "play_button", "drawable", this.getPackageName()));
         // If the deck is empty - game is over and we announce the winner

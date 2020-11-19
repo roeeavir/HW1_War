@@ -1,6 +1,6 @@
 package com.example.hw1_war_roeeaviran316492644;
 
-public class WarCard{// Class for implementing card ID and value
+public class WarCard {// Class for implementing card ID and value
     // Variables
     final private String cardName;
     final private int cardValue;

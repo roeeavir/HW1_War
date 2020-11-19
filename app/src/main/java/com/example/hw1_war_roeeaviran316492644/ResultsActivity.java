@@ -56,7 +56,7 @@ public class ResultsActivity extends AppCompatActivity {
         r = new Random();
     }
 
-    private void changeColor(){
+    private void changeColor() {
         int color = Color.argb(255, r.nextInt(256),
                 r.nextInt(256), r.nextInt(256));
         results_LBL_winner.setTextColor(color);
