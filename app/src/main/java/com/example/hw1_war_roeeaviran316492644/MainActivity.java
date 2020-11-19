@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         String str;
         String[] turn_info = game.getTurn_info();// Needed turn info - cards id & round winner
 
-
         int left_Drawable_ID = this.getResources().getIdentifier(turn_info[0],
                 "drawable", this.getPackageName());// Gets card id from card object
         int right_Drawable_ID = this.getResources().getIdentifier(turn_info[1],

@@ -25,12 +25,9 @@ public class WarCardGame {// Card deck class
 
     private void createDeck() {// Function for initializing deck
         String str;
-        int drawableResourceId;
         for (char c : CARD_TYPES) {// inserts 52 cards into the deck
             for (int i = MIN_CARD_SCORE; i < MAX_DIFFERENT_CARD_SCORES + MIN_CARD_SCORE; i++) {
                 str = "poker_" + c + i;
-//                drawableResourceId = activity.getResources().getIdentifier(str, "drawable",
-//                        activity.getPackageName());// Gets ImageView id from ImageView name
                 deck.add(new WarCard(str, i));
             }
         }
