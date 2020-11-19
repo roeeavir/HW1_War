@@ -7,18 +7,20 @@ import java.util.Collections;
 
 public class WarCardGame {// Card deck class
     // Variables
-    private ArrayList<WarCard> deck;
     private final int MAX_DIFFERENT_CARD_SCORES = 13; // There are 13 different card scores
     private final int MIN_CARD_SCORE = 2; // 2 is the lowest score a card can have
     private final char[] CARD_TYPES = {'c', 'd', 'h', 'l'}; // Stands for Clubs, Diamonds, Hearts, Leaves
 
+    private ArrayList<WarCard> deck;
     private int leftScore;
     private int rightScore;
+    private String[] turn_info;
 
     public WarCardGame(int leftScore, int rightScore) {
         this.leftScore = leftScore;
         this.rightScore = rightScore;
         this.deck = new ArrayList<>();
+        turn_info = new String[3];
         createDeck();
         shuffleDeck();
     }
@@ -36,8 +38,8 @@ public class WarCardGame {// Card deck class
         }
     }
 
-    public String[] playTurn() {
-        String[] turn_info = new String[3];// Will contain cards id and winner of this turn
+    public void playTurn() {
+        turn_info = new String[3];// Will contain cards id and winner of this turn
         WarCard left_Card = deck.remove(0);// Gets card object from deck
         WarCard right_Card = deck.remove(0);
         turn_info[0] = left_Card.getCardName();// Gets card id from card object
@@ -56,7 +58,6 @@ public class WarCardGame {// Card deck class
         } else
             turn_info[2] = "Draw";
 
-        return turn_info;
     }
 
     private void shuffleDeck() {// Function for shuffling deck
@@ -84,5 +85,9 @@ public class WarCardGame {// Card deck class
 
     public int getRightScore() {
         return rightScore;
+    }
+
+    public String[] getTurn_info() {
+        return turn_info;
     }
 }
