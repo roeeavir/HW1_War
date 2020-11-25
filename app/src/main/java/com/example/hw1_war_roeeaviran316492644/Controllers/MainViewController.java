@@ -93,7 +93,6 @@ public class MainViewController { // Main Activity Controller Class
     }
 
 
-
     private void findViews() {// Initializes views
         main_LBL_leftScore = activity.findViewById(R.id.main_LBL_leftScore);
         main_LBL_rightScore = activity.findViewById(R.id.main_LBL_rightScore);
@@ -104,15 +103,15 @@ public class MainViewController { // Main Activity Controller Class
         game = new WarCardGame(0, 0);
     }
 
-    public void updateMain_LBL_center(String str){
+    public void updateMain_LBL_center(String str) {
         main_LBL_center.setText(str);
     }
 
-    public void updateMain_LBL_leftScore(String str){
+    public void updateMain_LBL_leftScore(String str) {
         main_LBL_leftScore.setText(str);
     }
 
-    public void updateMain_LBL_rightScore(String str){
+    public void updateMain_LBL_rightScore(String str) {
         main_LBL_rightScore.setText(str);
     }
 

@@ -24,7 +24,6 @@ public class ResultsActivity extends AppCompatActivity {
     private ResultsViewController resultsViewController;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,6 @@ public class ResultsActivity extends AppCompatActivity {
         resultsViewController.updateResults_LBL_winner(winner);
 
     }
-
 
 
     @Override

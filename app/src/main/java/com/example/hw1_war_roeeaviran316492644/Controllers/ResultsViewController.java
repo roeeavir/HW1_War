@@ -55,10 +55,9 @@ public class ResultsViewController {
         results_BTN_exit.setBackgroundColor(color);
     }
 
-    public void updateResults_LBL_winner(String str){
+    public void updateResults_LBL_winner(String str) {
         results_LBL_winner.setText(str + " Wins!!!");// Sets winner label
     }
-
 
 
 }
