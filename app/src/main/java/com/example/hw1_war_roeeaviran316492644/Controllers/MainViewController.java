@@ -1,6 +1,5 @@
 package com.example.hw1_war_roeeaviran316492644.Controllers;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;

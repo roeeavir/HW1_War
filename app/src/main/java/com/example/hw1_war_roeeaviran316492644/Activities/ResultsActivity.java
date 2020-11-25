@@ -2,17 +2,12 @@ package com.example.hw1_war_roeeaviran316492644.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.hw1_war_roeeaviran316492644.Controllers.MainViewController;
+import android.os.Bundle;
+
 import com.example.hw1_war_roeeaviran316492644.Controllers.ResultsViewController;
 import com.example.hw1_war_roeeaviran316492644.R;
 
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 

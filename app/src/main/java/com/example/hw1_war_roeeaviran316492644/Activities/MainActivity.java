@@ -2,16 +2,11 @@ package com.example.hw1_war_roeeaviran316492644.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.hw1_war_roeeaviran316492644.Controllers.MainViewController;
-import com.example.hw1_war_roeeaviran316492644.Models.WarCardGame;
 import com.example.hw1_war_roeeaviran316492644.R;
 
 public class MainActivity extends AppCompatActivity {

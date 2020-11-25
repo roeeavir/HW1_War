@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hw1_war_roeeaviran316492644.R;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ResultsViewController {
 
