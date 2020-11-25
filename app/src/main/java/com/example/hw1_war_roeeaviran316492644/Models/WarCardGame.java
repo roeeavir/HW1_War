@@ -84,6 +84,14 @@ public class WarCardGame {// Card deck class
         return rightScore;
     }
 
+    public void setLeftScore(int leftScore) {
+        this.leftScore = leftScore;
+    }
+
+    public void setRightScore(int rightScore) {
+        this.rightScore = rightScore;
+    }
+
     public String[] getTurn_info() {
         return turn_info;
     }

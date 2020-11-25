@@ -4,7 +4,7 @@
     android:id="@+id/results_REL_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_war"
+    android:background="@drawable/background_peace"
     android:gravity="center"
     tools:context=".Activities.MainActivity">
 

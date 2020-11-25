@@ -13,7 +13,7 @@ import com.example.hw1_war_roeeaviran316492644.Activities.ResultsActivity;
 import com.example.hw1_war_roeeaviran316492644.Models.WarCardGame;
 import com.example.hw1_war_roeeaviran316492644.R;
 
-public class MainViewController {
+public class MainViewController { // Main Activity Controller Class
 
     // Variables
     private AppCompatActivity activity;
@@ -26,7 +26,7 @@ public class MainViewController {
 
     public MainViewController(AppCompatActivity activity) {
         this.activity = activity;
-        findViews(activity);
+        findViews();
         initViews();
     }
 
@@ -94,7 +94,7 @@ public class MainViewController {
 
 
 
-    private void findViews(Activity activity) {// Initializes views
+    private void findViews() {// Initializes views
         main_LBL_leftScore = activity.findViewById(R.id.main_LBL_leftScore);
         main_LBL_rightScore = activity.findViewById(R.id.main_LBL_rightScore);
         main_IMG_leftCard = activity.findViewById(R.id.main_IMG_leftCard);
