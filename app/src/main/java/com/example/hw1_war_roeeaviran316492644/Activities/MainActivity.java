@@ -16,11 +16,6 @@ import com.example.hw1_war_roeeaviran316492644.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Variables
-    private TextView score_LBL_left, score_LBL_right, turns_LBL_center;
-    private ImageView card_IMG_left, card_IMG_right;
-    private ImageButton play_BTN_center;
-
     private MainViewController mainViewController;
 
 
@@ -30,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainViewController = new MainViewController(this);
+        mainViewController.updateMain_LBL_center("Game of War\nPress Start");
+        mainViewController.updateMain_LBL_leftScore("0");
+        mainViewController.updateMain_LBL_rightScore("0");
 
     }
 

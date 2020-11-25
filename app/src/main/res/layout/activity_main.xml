@@ -33,12 +33,11 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/score_LBL_left"
+                android:id="@+id/main_LBL_leftScore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="0"
                 android:textColor="#000000"
                 android:textSize="50sp" />
 
@@ -62,11 +61,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/turns_LBL_center"
+                android:id="@+id/main_LBL_center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Game of War\nPress Start"
                 android:textColor="@color/purple_200"
                 android:textSize="20sp" />
 
@@ -79,14 +77,14 @@
 
 
                 <ImageView
-                    android:id="@+id/card_IMG_left"
+                    android:id="@+id/main_IMG_leftCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/poker_deck" />
 
                 <ImageView
-                    android:id="@+id/card_IMG_right"
+                    android:id="@+id/main_IMG_rightCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -104,7 +102,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/play_BTN_center"
+                    android:id="@+id/main_BTN_centerPlay"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -134,12 +132,11 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/score_LBL_right"
+                android:id="@+id/main_LBL_rightScore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="0"
                 android:textColor="#000000"
                 android:textSize="50sp" />
 
