@@ -1,4 +1,4 @@
-package com.example.hw1_war_roeeaviran316492644;
+package com.example.hw1_war_roeeaviran316492644.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.hw1_war_roeeaviran316492644.R;
+
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -16,7 +18,7 @@ import java.util.TimerTask;
 public class ResultsActivity extends AppCompatActivity {
 
     private final int DELAY = 500;
-    public static final String RESULT_WINNER = "RESULT WINNER";
+    public static final String RESULT_WINNER = "RESULT_WINNER";
 
     RelativeLayout results_REL_background;
     private TextView results_LBL_winner;

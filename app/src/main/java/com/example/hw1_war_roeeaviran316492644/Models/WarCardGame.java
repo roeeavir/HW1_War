@@ -1,4 +1,4 @@
-package com.example.hw1_war_roeeaviran316492644;
+package com.example.hw1_war_roeeaviran316492644.Models;
 
 import java.util.ArrayList;
 import java.util.Collections;

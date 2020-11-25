@@ -1,4 +1,4 @@
-package com.example.hw1_war_roeeaviran316492644;
+package com.example.hw1_war_roeeaviran316492644.Models;
 
 public class WarCard {// Class for implementing card ID and value
     // Variables
@@ -18,4 +18,6 @@ public class WarCard {// Class for implementing card ID and value
     public int getCardValue() {
         return cardValue;
     }// Get card value
+
+
 }
